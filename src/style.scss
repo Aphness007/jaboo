@@ -1,0 +1,168 @@
+@import "nullstyle.scss";
+//Подключение шрифтов, добавить &display=swap - добавить при подключении через плагин
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Volkhov:7000&display=swap);
+//Шрифт по умолчании в переменной
+// $fontFamily: "Poppins";
+// $fontSize: rem(16);
+// $mainColor: #5E6282;
+// $maxWidth: 1440;
+// $minWidth: 320;
+// $maxWidthContainer: 1170;
+// $containerPadding: 30;
+// $containerWidth: $maxWidthContainer + $containerPadding;
+
+// $px: rem($containerWidth);
+// $tablet: em(991.98);
+// $mobile: em(767.98);
+// $mobileSmall: em(479.98);
+
+// $responsiveType: 2;
+
+// //(i) Стили будут применяться ко 
+// //всем классам содержащим *__container
+// //Например header__container, main__container и т.д.
+// //Снипет (HTML): cnt
+
+// @if ($responsiveType==1) {
+// 	// Отзывчивая
+// 	[class*="__container"] {
+// 		@if ($maxWidthContainer>0) {
+// 			max-width: rem($maxWidthContainer);
+// 			box-sizing: content-box;
+// 			margin: 0 auto;
+// 		}
+// 		@if ($containerPadding>0) {
+// 			padding: 0 rem(math.div($containerPadding, 2));
+// 		}
+// 	}
+// } @else {
+// 	// По брейк-поинтам
+// 	[class*="__container"] {
+// 		margin: 0 auto;
+// 		@if ($maxWidthContainer>0) {
+// 			max-width: rem($maxWidthContainer);
+// 			box-sizing: content-box;
+// 		} @else {
+// 			@if ($containerPadding>0) {
+// 				padding: 0 rem(math.div($containerPadding, 2));
+// 			}
+// 		}
+// 		@media (max-width: $pc) {
+// 			max-width: rem(970);
+// 		}
+// 		@media (max-width: $tablet) {
+// 			max-width: rem(750);
+// 		}
+// 		@media (max-width: $mobile) {
+// 			max-width: none;
+// 			@if ($containerPadding>0 and $maxWidthContainer>0) {
+// 				padding: 0 rem(math.div($containerPadding, 2));
+// 			}
+// 		}
+// 	}
+// }
+
+html{
+    font-family: "Poppins";
+    font-size: rem(16);
+    color: #5E6282;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0px 60px;
+}
+.header{
+    &__container{
+        display: flex;
+        min-height: 130px;
+        align-items: center;
+    }
+    &__menu{
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0px 0px 0px 45px;
+    }
+
+
+}
+.menu{
+    &__list{
+        display: flex;
+        flex: 1 1 auto;
+        gap: 55px;
+        @media (max-width:1084px){
+            gap: 20px;
+        }
+        @media (max-width:840px){
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+
+    }
+    &__body{
+        display: flex;
+        align-items: center;
+        gap: 86px;
+        @media (max-width:1084px){
+            gap: 30px;
+        }
+    }
+    &__link{
+        color: #212832;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 22px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+
+
+}
+.action-header{
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    color: #212832;
+    font-size: 17px;
+    font-weight: 500;
+    &__login{
+        background-color: white;
+        &:hover{
+            text-decoration: underline;
+    }
+    }
+    &__login,
+    &__sign-up,
+    &__lang{
+        color: #212832;
+        font-size: 17px;
+        font-weight: 500;
+    }
+     &__sign-up{
+        white-space: nowrap;
+        flex: 0 0 auto;
+        padding: 9px 22px;
+        border: 1px solid #212832;
+        border-radius: 5px;
+        line-height: 22px;
+        transition: all 0.4s ease-out 0s;
+        
+        &:hover{
+            background-color: #212832;
+            color: white;
+
+    }
+    }
+    @media (max-width:1084px){
+        gap: 20px;
+    }
+}
+select{
+    appearance: none;
+}
+
